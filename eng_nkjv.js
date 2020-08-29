@@ -35,7 +35,10 @@ bible.books.forEach(b => {
         JSON.stringify(chapters, null, 2));
     
     b.chapters.forEach(c => {
-        let d3 = d2 + c.num + '/';
+        if (!fs.existsSync(d2 + 'chapter/')) {
+            fs.mkdirSync(d2 + 'chapter/');
+        }
+        let d3 = d2 + 'chapter/' + c.num + '/';
         if (!fs.existsSync(d3)) {
             fs.mkdirSync(d3);
         }
