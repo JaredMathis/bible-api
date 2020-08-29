@@ -1,0 +1,1 @@
+data/eng_nkjv.json from: https://github.com/barnhill/Bible/blob/master/eng_nkjv.json
