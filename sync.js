@@ -1,9 +1,13 @@
 const u = require('wlj-utilities');
 
-const versions = [
-    'nkjv',
-    'kjv',
-];
+const versions = require('./api/translations.json');
+    
+(() => {
+    const p = `/translations.json`;
+    const command = `aws s3 cp ./api${p} s3://bible-api${p}`;
+    const output = u.executeCommand(command);
+    console.log(output);
+})();
 
 versions.forEach(version => {
     const books = require(`./api/translation/${version}/books.json`);
